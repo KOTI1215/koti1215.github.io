@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Dev<span>Portfolio</span></a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Hi, I'm <span class="highlight">BOORI KOTESWARA RAO</span></h1>
+            <p class="subtitle">Full-Stack Developer & Machine Learning Enthusiast</p>
+            <p class="hero-desc">I build production-ready web applications, intelligent machine learning models, and scalable backend services.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn primary-btn">View Projects</a>
+                <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am a passionate software developer with a strong foundation in full-stack web development and data science. I love turning complex problems into intuitive, high-performance web applications that deliver real value.</p>
+                    <p>Recently, I built and deployed full-stack machine learning solutions featuring real-time inference, database management, and external API integrations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Project 1: Sentiment Analysis App -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Movie Review Sentiment Analyzer</h3>
+                        <p>A full-stack machine learning web application that classifies movie reviews into Positive/Negative sentiments, integrates the OMDb API for movie metadata, and logs prediction history in SQLite.</p>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>Scikit-Learn</span>
+                            <span>SQLite</span>
+                            <span>Render</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://sentiment-project-3t3x.onrender.com" target="_blank" class="btn-sm"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/KOTI1215/sentiment-project" target="_blank" class="btn-sm secondary-sm"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Placeholder for your next project) -->
+                <div class="project-card">
+                    <div class="project-info">
+                        <h3>Project Two (Coming Soon)</h3>
+                        <p>An upcoming project showcasing advanced data processing, modern API design, and intuitive user interfaces.</p>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                            <span>APIs</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="btn-sm disabled"><i class="fas fa-external-link-alt"></i> Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages & Core</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Python</li>
+                        <li><i class="fas fa-check"></i> JavaScript (ES6+)</li>
+                        <li><i class="fas fa-check"></i> HTML5 & CSS3</li>
+                        <li><i class="fas fa-check"></i> SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Flask / FastAPI</li>
+                        <li><i class="fas fa-check"></i> Scikit-Learn</li>
+                        <li><i class="fas fa-check"></i> Pandas & NumPy</li>
+                        <li><i class="fas fa-check"></i> Bootstrap / Tailwind</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Deployment</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Git & GitHub</li>
+                        <li><i class="fas fa-check"></i> Render / Vercel</li>
+                        <li><i class="fas fa-check"></i> SQLite / PostgreSQL</li>
+                        <li><i class="fas fa-check"></i> REST APIs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container text-center">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-desc">I'm currently looking for new opportunities and collaborations. Feel free to reach out!</p>
+            <div class="social-links">
+                <a href="mailto:kotianu00@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                <a href="https://github.com/KOTI1215" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 BOORII KOTESWARA RAO. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
