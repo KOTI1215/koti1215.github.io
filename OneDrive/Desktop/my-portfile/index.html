@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOORI KOTESWARA RAO | B.E. CSE (AI/ML)</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="portfolio-container">
+    
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="logo-area">
+        <h2>BKR.dev</h2>
+        <span style="font-size: 0.75rem; color: #10b981; font-family: var(--font-mono);">● Online & Ready</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#stack">Tech Stack</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#terminal">Interactive Terminal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="https://linkedin.com" target="_blank" class="linkedin-badge">LinkedIn Profile ↗</a>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- About Section -->
+      <section id="about" class="hero-section">
+        <div class="badge-pill">
+          <span>⚡ ID: i26043120 | B.E. CSE (AI/ML)</span>
+        </div>
+        <h1>Hi, I'm <span class="highlight-name">BOORI KOTESWARA RAO</span></h1>
+        <p class="hero-subtitle">Specializing in Artificial Intelligence & Machine Learning | Python, Flask & System Architecture</p>
+        <p class="status-line">&gt; status: deploying machine learning models, scaling full-stack applications & optimizing system security.</p>
+        
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary">Explore Projects</a>
+          <a href="#terminal" class="btn-secondary">&gt; Try Terminal</a>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <h3>4+</h3>
+            <p>Production Web Apps</p>
+          </div>
+          <div class="metric-card">
+            <h3>AI/ML</h3>
+            <p>Core Specialization</p>
+          </div>
+          <div class="metric-card">
+            <h3>Cisco</h3>
+            <p>Network Security Labs</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section with Interactive Modals -->
+      <section id="projects" class="content-section">
+        <h2>Featured Projects</h2>
+        <p class="section-desc">Click any card to inspect architecture details and repository data.</p>
+        
+        <div class="projects-grid">
+          <div class="project-card" onclick="openModal('Sentiment Analysis App', 'Built using Python, Flask, and custom machine learning pipelines for real-time text analysis. Features user authentication and a sleek cyber-neon dashboard interface.')">
+            <h3>Sentiment Analysis Platform</h3>
+            <p>Real-time NLP processing web application built with Flask and Python.</p>
+            <span class="tech-tag">Python • Flask • ML</span>
+          </div>
+          <div class="project-card" onclick="openModal('SecureData CDP', 'Enterprise customer data platform focusing on database design, batch processing verification, and strict protected data masking protocols.')">
+            <h3>SecureData CDP</h3>
+            <p>Enterprise database design and batch processing system with data masking.</p>
+            <span class="tech-tag">SQL • Python • Security</span>
+          </div>
+          <div class="project-card" onclick="openModal('Network Security Labs', 'Comprehensive Cisco Networking Academy lab documentation integrating PowerShell automation scripts and threat response verification.')">
+            <h3>Cisco Lab & PowerShell Suite</h3>
+            <p>Network security hardening and automation script repository.</p>
+            <span class="tech-tag">PowerShell • Cisco • Networking</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Developer Terminal Section -->
+      <section id="terminal" class="content-section">
+        <h2>Interactive Developer Console</h2>
+        <p class="section-desc">Type commands directly or use quick buttons below to query student records.</p>
+        
+        <!-- Quick Action Terminal Toolbar -->
+        <div class="terminal-toolbar">
+          <button class="terminal-shortcut" onclick="runQuickCommand('bio')">bio</button>
+          <button class="terminal-shortcut" onclick="runQuickCommand('skills')">skills</button>
+          <button class="terminal-shortcut" onclick="runQuickCommand('projects')">projects</button>
+          <button class="terminal-shortcut" onclick="runQuickCommand('certs')">certs</button>
+          <button class="terminal-shortcut" onclick="runQuickCommand('clear')">clear</button>
+        </div>
+
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">bash - koti1215@portfolio</span>
+          </div>
+          <div id="terminal-body" class="terminal-body">
+            <div>Type commands like <span style="color: #f59e0b;">help, bio, skills, projects, or clear</span> below:</div>
+            <div style="color: #38bdf8; margin-bottom: 0.8rem;">bkr@portfolio-terminal:~$ Welcome BOORI KOTESWARA RAO (ID: i26043120). Type 'help' for options.</div>
+            <div class="terminal-input-line">
+              <span style="color: #9ca3af;">bkr@portfolio:~$</span>
+              <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="content-section">
+        <h2>Get In Touch</h2>
+        <p class="section-desc">I'm open to tech collaborations, AI/ML research discussions, and software engineering opportunities. Let's connect!</p>
+        <div class="contact-box">
+          <p>📧 Email: <span style="color: var(--accent-gold);">koti1215@portfolio.node</span></p>
+          <p>🐙 GitHub: <a href="https://github.com/KOTI1215" target="_github" style="color: var(--accent-cyan);">github.com/KOTI1215</a></p>
+          <p>💼 LinkedIn: <span style="color: var(--accent-emerald);">Published & Live</span></p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Project Modal Popup -->
+  <div id="project-modal" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-content">
+      <h3 id="modal-title">Project Title</h3>
+      <p id="modal-desc">Project description goes here...</p>
+      <button class="btn-primary" style="margin-top: 1.5rem;" onclick="closeModalForce()">Close Window</button>
+    </div>
+  </div>
+
+  <script src="script.js?v=3.0"></script>
+</body>
+</html>
