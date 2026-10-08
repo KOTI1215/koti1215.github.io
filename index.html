@@ -3,152 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Developer Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>BOORI KOTESWARA RAO | B.E. CSE (AI/ML) Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- Navigation Bar -->
     <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">Dev<span>Portfolio</span></a>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
+        <nav class="navbar">
+            <div class="logo"><span>BKR</span>.dev</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Tech Stack</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#terminal">Interactive Terminal</a></li>
+                <li><a href="#contact" class="nav-btn">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container hero-content">
+        <div class="hero-content">
+            <div class="badge"><i class="fa-solid fa-circle-dot"></i> B.E. CSE (AI/ML) Student</div>
             <h1>Hi, I'm <span class="highlight">BOORI KOTESWARA RAO</span></h1>
-            <p class="subtitle">Full-Stack Developer & Machine Learning Enthusiast</p>
-            <p class="hero-desc">I build production-ready web applications, intelligent machine learning models, and scalable backend services.</p>
+            <p class="tagline">B.E. CSE (AI/ML) Student | Full-Stack Developer | Machine Learning & DSA Enthusiast</p>
             <div class="hero-btns">
-                <a href="#projects" class="btn primary-btn">View Projects</a>
-                <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+                <a href="#projects" class="btn primary-btn">Explore Projects</a>
+                <a href="#terminal" class="btn secondary-btn"><i class="fa-solid fa-terminal"></i> Try Terminal</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I am a passionate software developer with a strong foundation in full-stack web development and data science. I love turning complex problems into intuitive, high-performance web applications that deliver real value.</p>
-                    <p>Recently, I built and deployed full-stack machine learning solutions featuring real-time inference, database management, and external API integrations.</p>
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Academic & Core Focus</h3>
+                <p>Pursuing B.E. in Computer Science and Engineering with a specialization in Artificial Intelligence and Machine Learning (Student ID: <strong>i26043120</strong>). Strong foundation in <strong>Data Structures & Algorithms (DSA)</strong> and scalable problem-solving.</p>
+            </div>
+            <div class="about-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Full-Stack & ML Engineering</h3>
+                <p>Experienced in building end-to-end full-stack web applications and integrating machine learning pipelines using Python, Flask, JavaScript, and modern developer tooling like VS Code and GitHub.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack / Skills Section -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Programming & Core</h3>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>Data Structures & Algorithms (DSA)</span>
+                    <span>JavaScript</span>
+                    <span>HTML5 / CSS3</span>
+                    <span>PowerShell</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>ML & Full-Stack Tools</h3>
+                <div class="tags">
+                    <span>Machine Learning</span>
+                    <span>Flask / Full-Stack</span>
+                    <span>REST APIs</span>
+                    <span>Visual Studio Code</span>
+                    <span>Git & GitHub</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                
-                <!-- Project 1: Sentiment Analysis App -->
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Movie Review Sentiment Analyzer</h3>
-                        <p>A full-stack machine learning web application that classifies movie reviews into Positive/Negative sentiments, integrates the OMDb API for movie metadata, and logs prediction history in SQLite.</p>
-                        <div class="tech-tags">
-                            <span>Python</span>
-                            <span>Flask</span>
-                            <span>Scikit-Learn</span>
-                            <span>SQLite</span>
-                            <span>Render</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://sentiment-project-3t3x.onrender.com" target="_blank" class="btn-sm"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="https://github.com/KOTI1215/sentiment-project" target="_blank" class="btn-sm secondary-sm"><i class="fab fa-github"></i> Code</a>
-                        </div>
+    <section id="projects" class="section">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-seedling"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/i26043120" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
+                <h3>Agri AI Project</h3>
+                <p>An intelligent agricultural system leveraging machine learning to deliver smart farming insights, crop recommendations, and data-driven agricultural optimization.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Machine Learning</span>
+                    <span>AI Models</span>
+                </div>
+            </div>
 
-                <!-- Project 2 (Placeholder for your next project) -->
-                <div class="project-card">
-                    <div class="project-info">
-                        <h3>Project Two (Coming Soon)</h3>
-                        <p>An upcoming project showcasing advanced data processing, modern API design, and intuitive user interfaces.</p>
-                        <div class="tech-tags">
-                            <span>Python</span>
-                            <span>JavaScript</span>
-                            <span>APIs</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn-sm disabled"><i class="fas fa-external-link-alt"></i> Coming Soon</a>
-                        </div>
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-brain"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/i26043120" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
+                <h3>Sentiment Analysis Web App</h3>
+                <p>A full-stack web application built with Python and Flask that integrates machine learning logic to dynamically analyze user input text and classify sentiment.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>Full-Stack</span>
+                </div>
+            </div>
 
+            <div class="project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-film"></i>
+                    <div class="project-links">
+                        <a href="https://github.com/i26043120" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <h3>Dynamic Movie Information Hub</h3>
+                <p>An interactive full-stack web application leveraging external REST APIs to fetch rich media metadata, user ratings, and high-performance search UI.</p>
+                <div class="project-tech">
+                    <span>JavaScript</span>
+                    <span>REST API</span>
+                    <span>CSS Grid</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages & Core</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Python</li>
-                        <li><i class="fas fa-check"></i> JavaScript (ES6+)</li>
-                        <li><i class="fas fa-check"></i> HTML5 & CSS3</li>
-                        <li><i class="fas fa-check"></i> SQL</li>
-                    </ul>
+    <!-- Interactive Terminal Section -->
+    <section id="terminal" class="section">
+        <h2 class="section-title">Interactive Developer Terminal</h2>
+        <p class="terminal-hint">Type commands like <code>help</code>, <code>bio</code>, <code>skills</code>, <code>projects</code>, or <code>clear</code> below:</p>
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
                 </div>
-                <div class="skill-category">
-                    <h3>Frameworks & Libraries</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Flask / FastAPI</li>
-                        <li><i class="fas fa-check"></i> Scikit-Learn</li>
-                        <li><i class="fas fa-check"></i> Pandas & NumPy</li>
-                        <li><i class="fas fa-check"></i> Bootstrap / Tailwind</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Deployment</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Git & GitHub</li>
-                        <li><i class="fas fa-check"></i> Render / Vercel</li>
-                        <li><i class="fas fa-check"></i> SQLite / PostgreSQL</li>
-                        <li><i class="fas fa-check"></i> REST APIs</li>
-                    </ul>
-                </div>
+                <div class="terminal-title">bkr@portfolio-terminal:~</div>
+            </div>
+            <div id="terminal-output" class="terminal-output">
+                <p>Welcome to BOORI KOTESWARA RAO's interactive portfolio console v2.6.</p>
+                <p>Type <span class="cmd-highlight">'help'</span> to see a list of available commands.</p>
+            </div>
+            <div class="terminal-input-line">
+                <span class="prompt-symbol">guest@bkr:~$</span>
+                <input type="text" id="terminal-input" autofocus autocomplete="off" spellcheck="false">
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section bg-light">
-        <div class="container text-center">
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="contact-desc">I'm currently looking for new opportunities and collaborations. Feel free to reach out!</p>
-            <div class="social-links">
-                <a href="mailto:kotianu00@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-                <a href="https://github.com/KOTI1215" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    <section id="contact" class="section">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-box">
+            <p>I'm open to tech collaborations, AI/ML research discussions, and software engineering opportunities.</p>
+            <a href="mailto:contact@example.com" class="btn primary-btn"><i class="fa-solid fa-envelope"></i> Send an Email</a>
+            <div class="social-icons">
+                <a href="https://github.com/i26043120" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container text-center">
-            <p>&copy; 2026 BOORII KOTESWARA RAO. All rights reserved.</p>
-        </div>
+        <p>&copy; 2026 BOORI KOTESWARA RAO (ID: i26043120) | B.E. CSE (AI/ML). Built with passion & hosted via GitHub Pages.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
