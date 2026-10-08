@@ -24,9 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
           responseLine.innerHTML = `
             <span style="color: #f59e0b;">Available Commands:</span><br>
             &nbsp;&nbsp;<span style="color: #38bdf8;">bio</span>       - Display professional student summary<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">education</span> - View degree & student ID info<br>
             &nbsp;&nbsp;<span style="color: #38bdf8;">skills</span>    - List core technical stack & tools<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">stack</span>     - Detailed breakdown of languages & tools<br>
             &nbsp;&nbsp;<span style="color: #38bdf8;">projects</span>  - Show highlighted AI/ML & web apps<br>
-            &nbsp;&nbsp;<span style="color: #38bdf8;">whoami</span>    - Check current user / visitor session info<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">certs</span>     - View Cisco Networking & academic labs<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">whoami</span>    - Check current visitor session info<br>
             &nbsp;&nbsp;<span style="color: #38bdf8;">contact</span>   - Get direct connection links<br>
             &nbsp;&nbsp;<span style="color: #38bdf8;">socials</span>   - View LinkedIn & GitHub profile links<br>
             &nbsp;&nbsp;<span style="color: #38bdf8;">clear</span>     - Clear terminal window
@@ -37,8 +40,26 @@ document.addEventListener("DOMContentLoaded", () => {
           responseLine.innerHTML = `<span style="color: #10b981;">Boori Koteswara Rao</span> | B.E. CSE (AI/ML) Student (ID: i26043120). Passionate about artificial intelligence, data structures & algorithms, and robust full-stack deployment.`;
           break;
 
+        case "education":
+          responseLine.innerHTML = `
+            <span style="color: #f59e0b;">Academic Profile:</span><br>
+            • Degree: B.E. Computer Science & Engineering (AI/ML)<br>
+            • Student ID: <span style="color: #38bdf8;">i26043120</span><br>
+            • Focus: Artificial Intelligence, Machine Learning, & Secure System Design
+          `;
+          break;
+
         case "skills":
           responseLine.innerHTML = `<span style="color: #f59e0b;">Core Stack:</span> Python, Flask, JavaScript, HTML/CSS, SQL, PowerShell, Machine Learning, Data Structures & Algorithms, and Cisco Network Security Labs.`;
+          break;
+
+        case "stack":
+          responseLine.innerHTML = `
+            <span style="color: #f59e0b;">Technical Breakdown:</span><br>
+            • Languages: Python, JavaScript, HTML5, CSS3, PowerShell, SQL<br>
+            • Frameworks: Flask, Visual Studio Code, Git, GitHub Pages<br>
+            • Domains: AI/ML Models, REST APIs, Database Masking & Security
+          `;
           break;
 
         case "projects":
@@ -47,6 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
             1. Sentiment Analysis Web App (Python • Flask • ML)<br>
             2. Movie Search & Info App (JavaScript • REST API)<br>
             3. SecureData CDP (Python • Database Security)
+          `;
+          break;
+
+        case "certs":
+          responseLine.innerHTML = `
+            <span style="color: #f59e0b;">Certifications & Labs:</span><br>
+            • Cisco Networking Academy: Network security labs & PowerShell automation<br>
+            • AI/ML Pathway: Neural network fundamentals & predictive modeling
           `;
           break;
 
@@ -66,37 +95,4 @@ document.addEventListener("DOMContentLoaded", () => {
           break;
 
         case "clear":
-          // Remove all lines except the header/welcome text wrapper
           const lines = terminalBody.querySelectorAll("div");
-          lines.forEach((line, index) => {
-            if (index > 2 && line !== terminalInput.parentElement) {
-              line.remove();
-            }
-          });
-          responseLine.innerHTML = "";
-          break;
-
-        case "":
-          responseLine.innerHTML = "";
-          break;
-
-        default:
-          responseLine.innerHTML = `<span style="color: #f43f5e;">Command not found: "${escapeHtml(command)}". Type 'help' for a list of valid commands.</span>`;
-          break;
-      }
-
-      if (command !== "clear" && command !== "") {
-        terminalBody.insertBefore(responseLine, terminalInput.parentElement);
-      }
-
-      // Reset input value & scroll to bottom
-      terminalInput.value = "";
-      terminalBody.scrollTop = terminalBody.scrollHeight;
-    }
-  });
-
-  // Helper function to prevent HTML injection in terminal feedback
-  function escapeHtml(text) {
-    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  }
-});
