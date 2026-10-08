@@ -1,124 +1,102 @@
-/* ==========================================================================
-   BKR.dev - Interactive Terminal Script & Dynamic Enhancements
-   ========================================================================== */
+// Interactive Developer Terminal Script for BKR.dev
+document.addEventListener("DOMContentLoaded", () => {
+  const terminalInput = document.getElementById("terminal-input");
+  const terminalBody = document.getElementById("terminal-body");
 
-document.addEventListener('DOMContentLoaded', () => {
-  const terminalInput = document.getElementById('terminal-input');
-  const terminalBody = document.getElementById('terminal-body');
+  if (!terminalInput || !terminalBody) return;
 
-  if (terminalInput && terminalBody) {
-    terminalInput.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') {
-        const command = terminalInput.value.trim().toLowerCase();
-        
-        // Echo user command
-        const commandEcho = document.createElement('div');
-        commandEcho.innerHTML = `<span style="color: #9ca3af;">guest@bkr:~$</span> ${escapeHtml(terminalInput.value)}`;
-        terminalBody.insertBefore(commandEcho, terminalInput.parentNode);
+  terminalInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      const command = terminalInput.value.trim().toLowerCase();
+      
+      // Echo user command
+      const commandLine = document.createElement("div");
+      commandLine.innerHTML = `<span style="color: #9ca3af;">guest@bkr:~$</span> ${escapeHtml(terminalInput.value)}`;
+      terminalBody.insertBefore(commandLine, terminalInput.parentElement);
 
-        // Process command
-        processCommand(command, terminalBody);
+      // Process command
+      const responseLine = document.createElement("div");
+      responseLine.style.marginBottom = "0.8rem";
+      responseLine.style.lineHeight = "1.5";
 
-        // Reset input
-        terminalInput.value = '';
-        terminalBody.scrollTop = terminalBody.scrollHeight;
+      switch (command) {
+        case "help":
+          responseLine.innerHTML = `
+            <span style="color: #f59e0b;">Available Commands:</span><br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">bio</span>       - Display professional student summary<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">skills</span>    - List core technical stack & tools<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">projects</span>  - Show highlighted AI/ML & web apps<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">whoami</span>    - Check current user / visitor session info<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">contact</span>   - Get direct connection links<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">socials</span>   - View LinkedIn & GitHub profile links<br>
+            &nbsp;&nbsp;<span style="color: #38bdf8;">clear</span>     - Clear terminal window
+          `;
+          break;
+
+        case "bio":
+          responseLine.innerHTML = `<span style="color: #10b981;">Boori Koteswara Rao</span> | B.E. CSE (AI/ML) Student (ID: i26043120). Passionate about artificial intelligence, data structures & algorithms, and robust full-stack deployment.`;
+          break;
+
+        case "skills":
+          responseLine.innerHTML = `<span style="color: #f59e0b;">Core Stack:</span> Python, Flask, JavaScript, HTML/CSS, SQL, PowerShell, Machine Learning, Data Structures & Algorithms, and Cisco Network Security Labs.`;
+          break;
+
+        case "projects":
+          responseLine.innerHTML = `
+            <span style="color: #f59e0b;">Featured Works:</span><br>
+            1. Sentiment Analysis Web App (Python • Flask • ML)<br>
+            2. Movie Search & Info App (JavaScript • REST API)<br>
+            3. SecureData CDP (Python • Database Security)
+          `;
+          break;
+
+        case "whoami":
+          responseLine.innerHTML = `guest-visitor@bkr-portfolio-node-2026 (Authorized Session)`;
+          break;
+
+        case "contact":
+          responseLine.innerHTML = `Reach out via GitHub (<a href="https://github.com/koti1215" target="_blank" style="color: #38bdf8; text-decoration: underline;">github.com/koti1215</a>) or check the website contact panel!`;
+          break;
+
+        case "socials":
+          responseLine.innerHTML = `
+            • GitHub: <a href="https://github.com/koti1215" target="_blank" style="color: #38bdf8; text-decoration: underline;">koti1215</a><br>
+            • Live Site: <a href="https://koti1215.github.io" target="_blank" style="color: #38bdf8; text-decoration: underline;">koti1215.github.io</a>
+          `;
+          break;
+
+        case "clear":
+          // Remove all lines except the header/welcome text wrapper
+          const lines = terminalBody.querySelectorAll("div");
+          lines.forEach((line, index) => {
+            if (index > 2 && line !== terminalInput.parentElement) {
+              line.remove();
+            }
+          });
+          responseLine.innerHTML = "";
+          break;
+
+        case "":
+          responseLine.innerHTML = "";
+          break;
+
+        default:
+          responseLine.innerHTML = `<span style="color: #f43f5e;">Command not found: "${escapeHtml(command)}". Type 'help' for a list of valid commands.</span>`;
+          break;
       }
-    });
-  }
 
-  // Smooth scrolling for sidebar navigation
-  document.querySelectorAll('.nav-links a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-        
-        // Update active class
-        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-        this.classList.add('active');
+      if (command !== "clear" && command !== "") {
+        terminalBody.insertBefore(responseLine, terminalInput.parentElement);
       }
-    });
+
+      // Reset input value & scroll to bottom
+      terminalInput.value = "";
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
   });
-});
 
-function processCommand(cmd, terminalBody) {
-  const responseDiv = document.createElement('div');
-  responseDiv.style.margin = '0.5rem 0 1rem 0';
-  responseDiv.style.lineHeight = '1.5';
-
-  switch (cmd) {
-    case 'help':
-      responseDiv.innerHTML = `
-        <span style="color: #f59e0b;">Available Commands:</span><br>
-        &nbsp;&nbsp;<strong>bio</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Learn more about Boori Koteswara Rao<br>
-        &nbsp;&nbsp;<strong>skills</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- View technical stack (Python, AI/ML, Flask, etc.)<br>
-        &nbsp;&nbsp;<strong>projects</strong>&nbsp;&nbsp;&nbsp;- Explore featured projects (Movie App, SecureData CDP)<br>
-        &nbsp;&nbsp;<strong>contact</strong>&nbsp;&nbsp;&nbsp;&nbsp;- Get direct reach-out options<br>
-        &nbsp;&nbsp;<strong>clear</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Clear the console screen
-      `;
-      break;
-
-    case 'bio':
-      responseDiv.innerHTML = `
-        <strong>Boori Koteswara Rao</strong> is a B.E. Computer Science and Engineering student specializing in 
-        <strong>Artificial Intelligence & Machine Learning (AI/ML)</strong>. Passionate about building full-stack applications, 
-        intelligent systems, and clean web architecture.
-      `;
-      break;
-
-    case 'skills':
-      responseDiv.innerHTML = `
-        <span style="color: #f59e0b;">Core Competencies:</span><br>
-        • Programming: Python, JavaScript, HTML/CSS, PowerShell<br>
-        • Frameworks: Flask, Visual Studio Code, Git/GitHub<br>
-        • Specializations: AI/ML, Data Structures & Algorithms (DSA), Network Security
-      `;
-      break;
-
-    case 'projects':
-      responseDiv.innerHTML = `
-        <span style="color: #f59e0b;">Featured Portfolio Projects:</span><br>
-        1. <strong>Movie Search & Information App</strong>: API-integrated metadata explorer.<br>
-        2. <strong>SecureData CDP</strong>: Database design and batch processing verification system.<br>
-        3. <strong>Cyber-Neon Portfolio</strong>: Interactive developer console & responsive web layout.
-      `;
-      break;
-
-    case 'contact':
-      responseDiv.innerHTML = `
-        Get in touch for AI/ML research discussions or software engineering collaborations:<br>
-        • GitHub: <a href="https://github.com/koti1215" target="_blank" style="color: #f59e0b;">koti1215</a><br>
-        • Live Domain: <a href="https://koti1215.github.io" target="_blank" style="color: #f59e0b;">koti1215.github.io</a>
-      `;
-      break;
-
-    case 'clear':
-      // Clear all child elements except the input line container
-      const inputLine = terminalBody.querySelector('.terminal-input-line');
-      terminalBody.innerHTML = '';
-      terminalBody.appendChild(inputLine);
-      return;
-
-    case '':
-      responseDiv.innerHTML = '';
-      break;
-
-    default:
-      responseDiv.innerHTML = `<span style="color: #ef4444;">Command not recognized: "${escapeHtml(cmd)}". Type 'help' for valid options.</span>`;
+  // Helper function to prevent HTML injection in terminal feedback
+  function escapeHtml(text) {
+    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
-
-  terminalBody.insertBefore(responseDiv, terminalBody.querySelector('.terminal-input-line'));
-}
-
-function escapeHtml(text) {
-  const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
-  };
-  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-}
+});
